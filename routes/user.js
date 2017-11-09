@@ -1,10 +1,13 @@
 'use strict'
-let express = require('express');
-let UserController = require('../controllers/user');
 
-let api = express.Router();
+let express = require('express')
+let UserController = require('../controllers/user')
 
-api.get('/prueba', UserController.prueba);
-api.post('/register', UserController.saveUser);
+let api = express.Router()
 
-module.exports = api;
+api.get('/prueba', UserController.prueba)
+api.post('/register', UserController.saveUser)
+api.post('/login', UserController.loginUser)
+api.get('/users', UserController.listUsers)
+
+module.exports = api
